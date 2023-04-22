@@ -6,11 +6,26 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @OA\Schema(
+ *      schema="ApiErrorResource",
+ *      type="object",
+ *      @OA\Property(
+ *          type="object",
+ *          property="data",
+ *          @OA\Property(
+ *              type="string",
+ *              property="error",
+ *              example="The given data was invalid."
+ *          )
+ *      )
+ * )
+ */
 class ApiErrorResource extends JsonResource
 {
     public function withResponse(Request $request, JsonResponse $response)
     {
-        $response->setStatusCode(400);
+        $response->setStatusCode(422);
 
         parent::withResponse($request, $response);
     }

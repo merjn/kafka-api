@@ -101,7 +101,7 @@ final class CreateUserControllerTest extends TestCase
             'look' => "hr-115-42.hd-190-1.ch-210-66.lg-285-82.sh-290-62",
         ]);
 
-        $this->postJson($uri)->assertStatus(400);
+        $this->postJson($uri)->assertStatus(422);
     }
 
     public function testCreateUserFailsIfUsernameInvalid(): void
@@ -136,7 +136,7 @@ final class CreateUserControllerTest extends TestCase
         ]);
 
         foreach ($invalidUsernames as $invalidUsername) {
-            $this->postJson($route($invalidUsername))->assertStatus(400);
+            $this->postJson($route($invalidUsername))->assertStatus(422);
         }
     }
 
@@ -173,7 +173,7 @@ final class CreateUserControllerTest extends TestCase
             'look' => "hr-115-42.hd-190-1.ch-210-66.lg-285-82.sh-290-62",
         ]);
 
-        $this->postJson($uri)->assertStatus(400);
+        $this->postJson($uri)->assertStatus(422);
     }
 
     /** @group email */
@@ -191,7 +191,7 @@ final class CreateUserControllerTest extends TestCase
             'look' => "hr-115-42.hd-190-1.ch-210-66.lg-285-82.sh-290-62",
         ]);
 
-        $this->postJson($uri)->assertStatus(400);
+        $this->postJson($uri)->assertStatus(422);
     }
 
     /** @group test-max-acc */
@@ -229,6 +229,6 @@ final class CreateUserControllerTest extends TestCase
             'password' => 'password',
             'motto' => $faker->sentence,
             'look' => "hr-115-42.hd-190-1.ch-210-66.lg-285-82.sh-290-62",
-        ])->assertStatus(400);
+        ])->assertStatus(422);
     }
 }

@@ -7,12 +7,12 @@
     },
     "paths": {
         "/api/user/auth_ticket": {
-            "get": {
+            "post": {
                 "tags": [
                     "User"
                 ],
-                "summary": "Get a new pseudorandom auth ticket for the user.",
-                "operationId": "e9c3ba4b7e04fe09ea49e7556d115d7d",
+                "summary": "Generate a pseudo-random authentication ticket.",
+                "operationId": "85d1ccd2bb035ef3d19f43e60675d5ee",
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -31,10 +31,78 @@
                     }
                 ]
             }
+        },
+        "/api/user/create": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create a new user",
+                "operationId": "createUser",
+                "requestBody": {
+                    "$ref": "#/components/requestBodies/CreateUserRequest"
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateUserSuccessResource"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ApiErrorResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
         "schemas": {
+            "CreateUserRequest": {
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "motto": {
+                        "type": "string"
+                    },
+                    "look": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ApiErrorResource": {
+                "properties": {
+                    "data": {
+                        "properties": {
+                            "error": {
+                                "type": "string",
+                                "example": "The given data was invalid."
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
             "AuthTicketResource": {
                 "properties": {
                     "data": {
@@ -48,6 +116,32 @@
                     }
                 },
                 "type": "object"
+            },
+            "CreateUserSuccessResource": {
+                "properties": {
+                    "data": {
+                        "properties": {
+                            "username": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "requestBodies": {
+            "CreateUserRequest": {
+                "description": "Create user request",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/CreateUserRequest"
+                        }
+                    }
+                }
             }
         }
     }
