@@ -1,0 +1,54 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "API Documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/user/auth_ticket": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get a new pseudorandom auth ticket for the user.",
+                "operationId": "e9c3ba4b7e04fe09ea49e7556d115d7d",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthTicketResource"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "password": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AuthTicketResource": {
+                "properties": {
+                    "data": {
+                        "properties": {
+                            "auth_ticket": {
+                                "type": "string",
+                                "example": "1234567890abcdef1234567890abcdef"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
