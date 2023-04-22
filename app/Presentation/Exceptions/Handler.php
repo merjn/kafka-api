@@ -6,7 +6,7 @@ use App\Application\Usecases\User\Command\CreateAccount\Exceptions\CreateAccount
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateEmailException;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateUsernameException;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\ReachedIpLimitException;
-use App\Http\Resources\ApiErrorResource;
+use App\Presentation\Http\Resources\User\ApiErrorResource;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 

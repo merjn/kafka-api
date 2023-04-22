@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace App\Presentation\Http\Controllers\User;
 
 use App\Application\Usecases\User\Command\CreateAccount\CreateUserCommand;
-use App\Http\Resources\CreateUserSuccessResource;
 use App\Presentation\Http\Requests\CreateUserRequest;
+use App\Presentation\Http\Resources\User\CreateUserSuccessResource;
 use Ecotone\Modelling\CommandBus;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 final readonly class CreateUserController
 {
