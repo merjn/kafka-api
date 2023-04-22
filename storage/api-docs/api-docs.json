@@ -27,7 +27,7 @@
                 },
                 "security": [
                     {
-                        "password": []
+                        "oauth2": []
                     }
                 ]
             }
@@ -140,6 +140,22 @@
                         "schema": {
                             "$ref": "#/components/schemas/CreateUserRequest"
                         }
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "oauth2": {
+                "type": "oauth2",
+                "description": "OAuth2 Password Grant",
+                "in": "header",
+                "scheme": "https",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "http://localhost/oauth/authorize",
+                        "tokenUrl": "http://localhost/oauth/token",
+                        "refreshUrl": "http://localhost/token/refresh",
+                        "scopes": []
                     }
                 }
             }

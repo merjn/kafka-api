@@ -22,7 +22,7 @@ final readonly class AuthTicketController
      *   summary="Generate a pseudo-random authentication ticket.",
      *
      *   security={
-     *     {"password": {}}
+     *     {"oauth2": {}}
      *   },
      *
      *   @OA\Response(
