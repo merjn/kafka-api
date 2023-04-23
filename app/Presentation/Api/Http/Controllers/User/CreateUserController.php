@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Presentation\Api\Http\Controllers\User;
 
-use App\Application\Usecases\User\Command\CreateAccount\CreateUserCommand;
+use App\Application\User\Command\CreateAccount\CreateUserCommand;
 use App\Presentation\Api\Http\Requests\CreateUserRequest;
 use App\Presentation\Api\Http\Resources\User\CreateUserSuccessResource;
 use Ecotone\Modelling\CommandBus;

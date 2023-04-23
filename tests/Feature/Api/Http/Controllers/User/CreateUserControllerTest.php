@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Api\Http\Controllers\User;
 
 
-use App\Application\Usecases\User\Command\CreateAccount\Interceptors\IpLimitChecker;
+use App\Application\User\Command\CreateAccount\Interceptors\IpLimitChecker;
 use App\Domain\Context\User\Entity\User;
 use App\Domain\Context\User\PasswordHasher\PasswordHasherInterface;
 use Faker\Factory;

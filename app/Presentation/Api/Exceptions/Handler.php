@@ -2,10 +2,10 @@
 
 namespace App\Presentation\Api\Exceptions;
 
-use App\Application\Usecases\User\Command\CreateAccount\Exceptions\CreateAccountValidationException;
-use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateEmailException;
-use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateUsernameException;
-use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\ReachedIpLimitException;
+use App\Application\User\Command\CreateAccount\Exceptions\CreateAccountValidationException;
+use App\Application\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateEmailException;
+use App\Application\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateUsernameException;
+use App\Application\User\Command\CreateAccount\Interceptors\Exceptions\ReachedIpLimitException;
 use App\Presentation\Api\Http\Resources\User\ApiErrorResource;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;

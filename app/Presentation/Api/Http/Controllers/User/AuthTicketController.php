@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Presentation\Api\Http\Controllers\User;
 
-use App\Application\Usecases\User\Command\GenerateAuthTicket\GenerateAuthTicket;
+use App\Application\User\Command\GenerateAuthTicket\GenerateAuthTicket;
 use App\Presentation\Api\Http\Resources\User\AuthTicketResource;
 use Ecotone\Modelling\CommandBus;
 use Illuminate\Contracts\Auth\Authenticatable;

@@ -33,8 +33,8 @@ return [
     |
     */
     'namespaces' => [
-        \App\Application\Usecases\User\Command\GenerateAuthTicket\GenerateAuthTicketHandler::class,
-        \App\Application\Usecases\StaffPage\Query\GetStaffMembers\GetStaffMembersHandler::class,
+        \App\Application\User\Command\GenerateAuthTicket\GenerateAuthTicketHandler::class,
+        \App\Application\StaffPage\Query\GetStaffMembers\GetStaffMembersHandler::class,
     ],
 
     /*
