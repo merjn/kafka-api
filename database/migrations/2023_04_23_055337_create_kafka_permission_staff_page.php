@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kafka_permission_team_members', function (Blueprint $table) {
+        Schema::create('kafka_permission_staff_page', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->integer('permission_id');
-
+            $table->integer('order');
             $table->foreign('permission_id')->references('id')->on('permissions');
 
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kafka_permission_team_members');
+        Schema::dropIfExists('kafka_permission_staff_page');
     }
 };

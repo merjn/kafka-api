@@ -4,10 +4,17 @@ declare(strict_types=1);
 
 namespace App\Presentation\Http\Controllers\Community;
 
+use App\Application\Usecases\StaffPage\Query\GetStaffMembers\GetStaffMembersQuery;
+use Ecotone\Modelling\QueryBus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 final readonly class StaffController
 {
+    public function __construct(
+        private QueryBus $queryBus
+    ) { }
+
     /**
      * @OA\Get(
      *      path="/api/community/staff",
@@ -37,9 +44,9 @@ final readonly class StaffController
      */
     public function __invoke(Request $request)
     {
-        $ranks = explode(',', $request->query('rank'));
+        $ranks = Arr::get($request->get('filter'), 'rank', []);
 
-        var_dump($ranks);
+        dd($this->queryBus->send(new GetStaffMembersQuery($ranks)));
         exit;
     }
 }

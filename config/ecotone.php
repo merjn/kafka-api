@@ -34,6 +34,7 @@ return [
     */
     'namespaces' => [
         \App\Application\Usecases\User\Command\GenerateAuthTicket\GenerateAuthTicketHandler::class,
+        \App\Application\Usecases\StaffPage\Query\GetStaffMembers\GetStaffMembersHandler::class,
     ],
 
     /*

@@ -14,7 +14,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('/community')->name('community.')->group(function () {
-    Route::get('/staff', \App\Presentation\Http\Controllers\Community\StaffController::class);
+    Route::get('/staff', \App\Presentation\Http\Controllers\Community\StaffController::class)->name('staff');
 });
 
 Route::prefix('/user')->name('user.')->group(function () {

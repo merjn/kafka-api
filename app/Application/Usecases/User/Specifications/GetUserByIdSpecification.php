@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Application\Specifications\User;
+namespace App\Application\Usecases\User\Specifications;
 
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\BaseSpecification;
