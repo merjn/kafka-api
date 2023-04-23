@@ -26,17 +26,17 @@ class StaffPage
     #[Column(type: 'string')]
     private string $name;
 
-    #[Column(type: 'integer')]
-    private int $order;
+    #[Column(name: 'page_order', type: 'integer')]
+    private int $pageOrder;
 
     #[OneToOne(targetEntity: Permission::class)]
     #[JoinColumn(name: "permission_id", referencedColumnName: "id")]
     private Permission $permission;
 
-    public function __construct(string $name, int $order, Permission $permission)
+    public function __construct(string $name, int $pageOrder, Permission $permission)
     {
         $this->name = $name;
-        $this->order = $order;
+        $this->pageOrder = $pageOrder;
         $this->permission = $permission;
     }
 
@@ -46,11 +46,19 @@ class StaffPage
     }
 
     /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
      * @return int
      */
-    public function getOrder(): int
+    public function getPageOrder(): int
     {
-        return $this->order;
+        return $this->pageOrder;
     }
 
     public function getStaffMembers(): iterable

@@ -20,8 +20,17 @@ final class StaffControllerTest extends TestCase
 
         $page = new StaffPage(
             name: "Hotel Manager",
-            order: 1,
+            pageOrder: 1,
             permission: $this->getEntityManager()->createQuery('SELECT p FROM App\Domain\Context\Staff\Entity\Permission p ORDER BY p.id desc')->setMaxResults(1)->getSingleResult()
+        );
+
+        $this->getEntityManager()->persist($page);
+        $this->getEntityManager()->flush();
+
+        $page = new StaffPage(
+            name: "Assistent Hotel Manager",
+            pageOrder: 2,
+            permission: $this->getEntityManager()->createQuery('SELECT p FROM App\Domain\Context\Staff\Entity\Permission p ORDER BY p.id asc')->setMaxResults(1)->getSingleResult()
         );
 
         $this->getEntityManager()->persist($page);

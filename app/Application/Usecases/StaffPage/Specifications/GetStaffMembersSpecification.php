@@ -9,7 +9,7 @@ use Happyr\DoctrineSpecification\Specification\BaseSpecification;
 
 class GetStaffMembersSpecification extends BaseSpecification
 {
-    private array $ranks = [];
+    private array $ranks;
 
     public function __construct(array $ranks, ?string $context = null)
     {
@@ -21,12 +21,12 @@ class GetStaffMembersSpecification extends BaseSpecification
     protected function getSpec()
     {
         if (empty($this->ranks)) {
-            return Spec::orderBy('order');
+            return Spec::orderBy('pageOrder');
         }
 
         return Spec::andX(
             Spec::in('rank', $this->ranks),
-            Spec::orderBy('order')
+            Spec::orderBy('pageOrder')
         );
     }
 }

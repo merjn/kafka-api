@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('permission_id');
-            $table->integer('order');
+            $table->integer('page_order');
             $table->foreign('permission_id')->references('id')->on('permissions');
 
             $table->timestamps();

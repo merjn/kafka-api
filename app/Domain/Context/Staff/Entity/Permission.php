@@ -36,7 +36,7 @@ class Permission
     /**
      * @return array
      */
-    public function getUsers(): array
+    public function getUsers(): iterable
     {
         return $this->users;
     }

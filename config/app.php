@@ -162,10 +162,10 @@ return [
         InfraUserProvider::class,
         \Ecotone\Laravel\EcotoneProvider::class,
         \App\Application\Providers\AppServiceProvider::class,
-        \App\Presentation\Providers\AuthServiceProvider::class,
+        \App\Presentation\Api\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        \App\Presentation\Providers\EventServiceProvider::class,
-        \App\Presentation\Providers\RouteServiceProvider::class,
+        \App\Presentation\Api\Providers\EventServiceProvider::class,
+        \App\Presentation\Api\Providers\RouteServiceProvider::class,
 
     ])->toArray(),
 
