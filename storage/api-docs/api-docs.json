@@ -31,10 +31,16 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success"
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StaffMembersCollection"
+                                }
+                            }
+                        }
                     }
-                },
-                "security": []
+                }
             }
         },
         "/api/user/auth_ticket": {
@@ -43,7 +49,7 @@
                     "User"
                 ],
                 "summary": "Generate a pseudo-random authentication ticket.",
-                "operationId": "85d1ccd2bb035ef3d19f43e60675d5ee",
+                "operationId": "4f377457e7a62f3eb8dc892b98d79b94",
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -116,6 +122,43 @@
                     },
                     "look": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "StaffMembersCollection": {
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Hotel Manager"
+                                },
+                                "users": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "username": {
+                                                "type": "string",
+                                                "example": "Lotus"
+                                            },
+                                            "motto": {
+                                                "type": "string",
+                                                "example": "There's no place like Habbo!"
+                                            },
+                                            "look": {
+                                                "type": "string",
+                                                "example": "hd-180-1.ch-210-66.lg-270-82.sh-290-62"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
                     }
                 },
                 "type": "object"

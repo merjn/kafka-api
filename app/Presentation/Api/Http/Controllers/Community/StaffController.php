@@ -40,7 +40,8 @@ final readonly class StaffController
      *
      *     @OA\Response(
      *          response=200,
-     *          description="Success"
+     *          description="Success",
+     *          @OA\JsonContent(ref="#/components/schemas/StaffMembersCollection")
      *     )
      * )
      */
