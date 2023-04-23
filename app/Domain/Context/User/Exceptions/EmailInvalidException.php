@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\User\Exceptions;
+namespace App\Domain\Context\User\Exceptions;
 
 class EmailInvalidException extends \Exception
 {

@@ -8,7 +8,7 @@ use App\Application\Usecases\User\Command\CreateAccount\CreateUserCommand;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Attributes\DuplicateUsernameCheck;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateUsernameException;
 use App\Application\Usecases\User\Command\CreateAccount\Specifications\GetUserByUsernameSpecification;
-use App\Domain\User\Repository\UserRepositoryInterface;
+use App\Domain\Context\User\Repository\UserRepositoryInterface;
 use Ecotone\Messaging\Attribute\Interceptor\Before;
 
 final readonly class DuplicateUsernameChecker

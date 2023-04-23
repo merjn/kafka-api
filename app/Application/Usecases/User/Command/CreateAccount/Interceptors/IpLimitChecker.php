@@ -9,7 +9,7 @@ use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Attributes\
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\IpCheckFailedException;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\ReachedIpLimitException;
 use App\Application\Usecases\User\Command\CreateAccount\Specifications\GetIpCountSpecification;
-use App\Domain\User\Repository\UserRepositoryInterface;
+use App\Domain\Context\User\Repository\UserRepositoryInterface;
 use Ecotone\Messaging\Attribute\Interceptor\Before;
 use Illuminate\Support\Arr;
 

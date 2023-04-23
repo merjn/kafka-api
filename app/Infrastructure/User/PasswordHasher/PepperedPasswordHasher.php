@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\User\PasswordHasher;
 
-use App\Domain\User\PasswordHasher\PasswordHasherInterface;
-use Illuminate\Contracts\Hashing\Hasher;
+use App\Domain\Context\User\PasswordHasher\PasswordHasherInterface;
 use Illuminate\Support\Facades\Hash;
 
 /**

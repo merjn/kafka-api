@@ -39,7 +39,7 @@ final class AuthTicketControllerTest extends TestCase
         $response->assertSuccessful();
 
         // Select the user from the database
-        $user = $this->getEntityManager()->createQuery('SELECT u FROM App\Domain\User\Entity\User u WHERE u.id = :id')
+        $user = $this->getEntityManager()->createQuery('SELECT u FROM App\Domain\Context\User\Entity\User u WHERE u.id = :id')
             ->setParameter('id', 1)
             ->getSingleResult();
 

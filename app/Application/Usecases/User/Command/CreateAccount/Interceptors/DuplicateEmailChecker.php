@@ -6,7 +6,7 @@ use App\Application\Usecases\User\Command\CreateAccount\CreateUserCommand;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Attributes\DuplicateEmailCheck;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Exceptions\DuplicateEmailException;
 use App\Application\Usecases\User\Command\CreateAccount\Specifications\GetUserByEmailSpecification;
-use App\Domain\User\Repository\UserRepositoryInterface;
+use App\Domain\Context\User\Repository\UserRepositoryInterface;
 use Ecotone\Messaging\Attribute\Interceptor\Before;
 
 final readonly class DuplicateEmailChecker

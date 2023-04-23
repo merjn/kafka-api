@@ -6,8 +6,8 @@ namespace App\Application\Usecases\User\Command\GenerateAuthTicket;
 
 use App\Application\Exceptions\User\UserNotFoundException;
 use App\Application\Specifications\User\GetUserByIdSpecification;
-use App\Domain\User\Repository\UserRepositoryInterface;
-use App\Domain\User\Ticket\AuthTicketGeneratorInterface;
+use App\Domain\Context\User\Repository\UserRepositoryInterface;
+use App\Domain\Context\User\Ticket\AuthTicketGeneratorInterface;
 use Ecotone\Modelling\Attribute\CommandHandler;
 
 final readonly class GenerateAuthTicketHandler

@@ -8,11 +8,11 @@ use App\Application\Usecases\User\Command\CreateAccount\Exceptions\CreateAccount
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Attributes\DuplicateEmailCheck;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Attributes\DuplicateUsernameCheck;
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\Attributes\MaxAccountCheck;
-use App\Domain\User\Entity\User;
-use App\Domain\User\Exceptions\EmailInvalidException;
-use App\Domain\User\Exceptions\UsernameInvalidException;
-use App\Domain\User\PasswordHasher\PasswordHasherInterface;
-use App\Domain\User\Repository\UserRepositoryInterface;
+use App\Domain\Context\User\Entity\User;
+use App\Domain\Context\User\Exceptions\EmailInvalidException;
+use App\Domain\Context\User\Exceptions\UsernameInvalidException;
+use App\Domain\Context\User\PasswordHasher\PasswordHasherInterface;
+use App\Domain\Context\User\Repository\UserRepositoryInterface;
 use Ecotone\Modelling\Attribute\CommandHandler;
 
 final readonly class CreateUserHandler

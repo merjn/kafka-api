@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\User\Ticket;
+namespace App\Domain\Context\User\Ticket;
 
 interface AuthTicketGeneratorInterface
 {

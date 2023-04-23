@@ -6,6 +6,37 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/community/staff": {
+            "get": {
+                "tags": [
+                    "Community"
+                ],
+                "summary": "Get a list of staff members.",
+                "description": "Get a list of staff members.",
+                "operationId": "getStaffMembers",
+                "parameters": [
+                    {
+                        "name": "filter[rank]",
+                        "in": "query",
+                        "description": "Filter by one or many ranks.",
+                        "required": false,
+                        "style": "deepObject",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "security": []
+            }
+        },
         "/api/user/auth_ticket": {
             "post": {
                 "tags": [

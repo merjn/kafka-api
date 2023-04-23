@@ -6,8 +6,8 @@ namespace Api\Http\Controllers\User;
 
 
 use App\Application\Usecases\User\Command\CreateAccount\Interceptors\IpLimitChecker;
-use App\Domain\User\Entity\User;
-use App\Domain\User\PasswordHasher\PasswordHasherInterface;
+use App\Domain\Context\User\Entity\User;
+use App\Domain\Context\User\PasswordHasher\PasswordHasherInterface;
 use Faker\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Request;
@@ -34,7 +34,7 @@ final class CreateUserControllerTest extends TestCase
         $expectedLook = "hr-115-42.hd-190-1.ch-210-66.lg-285-82.sh-290-62";
 
         // Get user by username
-        $entity = fn () => $this->getEntityManager()->createQuery('SELECT u FROM App\Domain\User\Entity\User u WHERE u.username = :username')
+        $entity = fn () => $this->getEntityManager()->createQuery('SELECT u FROM App\Domain\Context\User\Entity\User u WHERE u.username = :username')
             ->setParameter('username', $expectedUsername)
             ->getOneOrNullResult();
 
@@ -201,7 +201,7 @@ final class CreateUserControllerTest extends TestCase
         defer($_, fn () => $this->tearDownDoctrineDatabaseTransactions());
 
         // Fill the database with 5 users using the same IP address
-        $this->getEntityManager()->createQuery('DELETE FROM App\Domain\User\Entity\User u WHERE u.ipCurrent = :ip OR u.ipRegister = :ip')
+        $this->getEntityManager()->createQuery('DELETE FROM App\Domain\Context\User\Entity\User u WHERE u.ipCurrent = :ip OR u.ipRegister = :ip')
             ->setParameter('ip', Request::ip())
             ->execute();
 

@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\User\Entity;
+namespace App\Domain\Context\User\Entity;
 
-use App\Domain\User\Exceptions\EmailInvalidException;
-use App\Domain\User\Exceptions\UsernameInvalidException;
+use App\Domain\Attributes\AggregateRoot;
+use App\Domain\Context\User\Exceptions\EmailInvalidException;
+use App\Domain\Context\User\Exceptions\UsernameInvalidException;
 use Carbon\Carbon;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
@@ -13,6 +14,7 @@ use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Table;
 
+#[AggregateRoot]
 #[Entity]
 #[Table(name: 'users')]
 class User
