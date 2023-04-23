@@ -27,19 +27,12 @@ final class StaffControllerTest extends TestCase
         $this->getEntityManager()->persist($page);
         $this->getEntityManager()->flush();
 
-        $page = new StaffPage(
-            name: "Assistent Hotel Manager",
-            pageOrder: 2,
-            permission: $this->getEntityManager()->createQuery('SELECT p FROM App\Domain\Context\Staff\Entity\Permission p ORDER BY p.id asc')->setMaxResults(1)->getSingleResult()
-        );
-
-        $this->getEntityManager()->persist($page);
-        $this->getEntityManager()->flush();
-
         $route = route('community.staff');
 
         $response = $this->get($route);
 
         $response->assertStatus(200);
+
+        dd($response->getContent());
     }
 }
